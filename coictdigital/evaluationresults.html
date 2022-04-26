@@ -7,13 +7,12 @@
 
   <title>CoICT Digital</title>
   <link rel="shortcut icon" href="assets/img/favicon.jpg" type="image/x-icon">
-  <meta name="title" content="">
+  <meta name="title" content="Digital solutions services">
   <meta name="description" content="">
   <meta name="keywords" content="">
   <!-- css files -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -32,7 +31,7 @@
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="#hero" class="nav-link scrollto active"> <span>Home</span></a></li>
+          <li><a href="index.html" class="nav-link scrollto"> <span>Home</span></a></li>
           <li><a href="courseevaluation.html" class="nav-link scrollto"> <span>Course Evaluation</span></a></li>        
           <li><a href="alumnirecords.html" class="nav-link scrollto"><span>Alumni Records</span></a></li>
           <li><a href="teachingmonitoring.html" class="nav-link scrollto"> <span>Teaching Monitoring</span></a></li>
@@ -43,70 +42,41 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1 class="">CoICT Digital</h1>
-    </div>
-  </section><!-- End Hero -->
 
   <main id="main">
 
   
-       <!-- ======= Services Section ======= -->
-       <section  class="services">
-        <div class="container">
-  
-          <div class="section-title">
-            <h2>About</h2>
-            
+       <!-- ======= Form Section ======= -->
+       <span class="badge alert-success" style="float: right;">Japhet Mlaki</span>
+       <section id="evaluation" class="services">        
+        <div class="container-fluid">           
+          <div class="section-title">          
+            <h3>Quality Assurance Bureau</h3>
+            <h3>Undergraduate Programs</h3>
+            <h2>STUDENT COURSE EVALUATION QUESTIONNAIRE RESULTS</h2>        
           </div>
-  
-          <div class="row">
-            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-              <div class="icon"><i class="fas fa-light fa-dna"></i></div>
-              <h4 class="title">Course Evaluation</h4>
-              <p class="description">
-                Students can fill evaluation forms and view evaluation results for respective courses.Evaluation results are real time and can be seen by both students and staff.
-              </p>
+         
+          <div class="container">
+            <div class="row">
+              <h5>There are <span style="color: #0864af;">42</span> responses.</h5>
             </div>
-            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="fas fa-thin fa-clipboard"></i></div>
-              <h4 class="title">Alumni Records</h4>
-              <p class="description">
-               Alumni from the University of Dar es salaam can have accounts with their information after they graduate for easy contact from the University for different purposes. </p>
+            
+            <div class="row">
+              <div class="centre">
+               <p>Instructor's preparedness on the subject matter</p>
+               <div class="chart">
+                <canvas id="chart-bars" class="chart-canvas" height="250" style="border-radius: 10px;"></canvas>
+              </div>                     
+              </div>
             </div>
-            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="fas fa-thin fa-chalkboard"></i></div>
-              <h4 class="title">Teaching Monitoring</h4>
-              <p class="description">
-               Teaching can be easily monitored from the system where class representatives fill monitoring forms that are submitted to the respective unit after every class </p>
-            </div>
-            <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="fas fa-thin fa-book"></i></div>
-              <h4 class="title">Course Allocation</h4>
-              <p class="description">
-               Course allocation for staff is made easy in the system.Staff can easily login into their accounts to see allocated courses and suggest edits where necessary.</p>
-            </div>
-            <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="fas fa-thin fa-file"></i></div>
-              <h4 class="title">Exam Invigilation</h4>
-              <p class="description">
-               Invigilators for exams are easily assigned through the system.Staff can see where they're assigned to invigilate and students can see who their invigilator is for the exams.</p>
-            </div>
-            </div>
-  
-        </div>
-      </section><!-- End Services Section -->
+          </div> 
+          
+          <div class="form-group">
+           <button type="submit" class="mx-auto button3" name="submit">Download Results</button>
+          </div>
+          </div>
+      </section><!-- End Form Section -->
 
-          <!-- ======= sky Section ======= -->
-    <section id="sky" class="sky">
-      <div class="container">
-          <h2>Call us the one-stop-site</h2>       
-      </div>
-    </section><!-- End Sky Section -->
-  
-  
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -145,6 +115,10 @@
       </div>
     </div>
     </section>
+
+
+
+
     <!-- End Contact Section -->
 
   </main>
@@ -161,10 +135,84 @@
   </footer><!-- End  Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></a>
-  <script src="https://kit.fontawesome.com/939695db0f.js" crossorigin="anonymous"></script>
+  <script src="./assets/js/plugins/chartjs.min.js"></script>
+  <script>
+    var ctx = document.getElementById("chart-bars").getContext("2d");
 
-  <!-- main js file -->
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["Excellent", "Very good", "Satisfactory", "Poor", "Very Poor"],
+        datasets: [{
+          tension: 0.4,
+          borderWidth: 0,
+          borderRadius: 2,
+          borderSkipped: false,
+          backgroundColor: '#f6b418',
+          data: [50, 20, 10, 22, 50],
+          maxBarThickness: 20
+        }, ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+       
+        scales: {
+          y: {
+           
+            ticks: {
+              suggestedMin: 0,
+              suggestedMax: 500,
+              beginAtZero: true,
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+              color: "#000"
+            },
+          },
+          x: {
+          
+            ticks: {
+              display: true,
+              color: '#000',
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+
+
+  </script>
+  
+  <script src="https://kit.fontawesome.com/0cdec3100d.js" crossorigin="anonymous"></script>
+   <!-- main js file -->
   <script src="assets/js/main.js"></script>
+  <!-- jQuery -->
+  <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+  <!-- Popper JS -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+  <!-- Bootstrap JS -->
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+  <!-- Chart Js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"></script>
 
 </body>
 
