@@ -18,7 +18,8 @@ h1, h2, h3, h4, h6 {
   font-family: "Helvetica", sans-serif;
 }
 
-/* evaluation form start*/
+
+/* evaluation form FOR STUDENTS start*/
 .badge{
 margin-top: 30px;
 margin-right:10px;
@@ -75,6 +76,19 @@ textarea{
     }
 /* evaluation form end*/
 
+/* evaluation form details FOR STUDENTS start*/
+.details{
+  width: 320px;
+  height: 380px;
+  color: #000000;
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+.dropdown{
+  border: none;
+  border-radius: 40px;
+}
 
 .login {
   margin-left: auto;
