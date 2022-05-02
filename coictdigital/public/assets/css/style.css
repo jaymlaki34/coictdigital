@@ -27,7 +27,7 @@ margin-right:10px;
 
 h3{
   font-family: "Helvetica", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   text-align: center;
   position: relative;
@@ -35,7 +35,7 @@ h3{
 
 h5{
   font-family: "Helvetica", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   padding-bottom: 20px;
   padding-top: 10px;
   font-weight: bold;
@@ -198,7 +198,7 @@ img{
 }
 
 #header .profile h1 {
-  font-size: 24px;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   font-weight: 600;
@@ -314,7 +314,7 @@ img{
 }
 
 #hero h1 {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 56px;
   color: #fff;
@@ -323,7 +323,7 @@ img{
 #hero p {
   color: #fff;
   margin-bottom: 50px;
-  font-size: 26px;
+  font-size: 22px;
   font-family: "Helvetica", sans-serif;  
   margin-left: 350px;
 }
@@ -343,18 +343,18 @@ img{
 
 @media (max-width: 1180px) {
   #hero h1 {
-    font-size: 28px;
+    font-size: 26px;
     line-height: 36px;
     margin-left: 25px;
   }
   #hero h2 {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
     margin-bottom: 30px;
     margin-left: 25px;
   }
   #hero p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
     margin-bottom: 30px;
     margin-left: 25px;
@@ -378,7 +378,7 @@ section {
 }
 
 .section-title h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -493,7 +493,7 @@ section {
 
 .contact .info h4 {
   padding: 0 0 0 60px;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
   color: #000;
@@ -502,7 +502,7 @@ section {
 .contact .info p {
   padding: 0 0 10px 60px;
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 12px;
   color: #000;
 }
 
