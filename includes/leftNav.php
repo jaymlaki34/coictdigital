@@ -9,7 +9,13 @@
     <nav id="navbar" class="nav-menu navbar">
       <ul>
         <li><a href="index.html" class="nav-link scrollto"> <span>Home</span></a></li>
-        <li><a href="evaluation1.php" class="nav-link scrollto"> <span>Course Evaluation</span></a></li>
+        <li><a href="<?php
+                      if ($_SESSION["userData"]["role"] == 2) {
+                        echo "";
+                      } else if ($_SESSION["userData"]["role"] == 1) {
+                        echo "evaluation1.php";
+                      }
+                      ?>" class="nav-link scrollto"> <span>Course Evaluation</span></a></li>
         <li><a href="alumnirecords.html" class="nav-link scrollto"><span>Alumni Records</span></a></li>
         <li><a href="teachingmonitoring.html" class="nav-link scrollto"> <span>Teaching Monitoring</span></a></li>
         <li><a href="courseallocation.html" class="nav-link scrollto"> <span>Course Allocation</span></a></li>

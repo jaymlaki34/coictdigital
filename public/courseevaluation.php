@@ -307,8 +307,25 @@
           </form>
         </div>
 
+        <!-- fading evaluation submit-->
+        <div class="modal fade" id="evaluationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-bottom-0">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button> -->
+              </div>
+              <div class="modal-body text-center">
+                <p>Thank you for your response. </p>
+                <p>You and other <?php echo ($_SESSION["studentFilledCount"] - 1);
+                                  echo $_SESSION["studentFilledCount"] - 1 > 1 ?  " students " : " student "   ?>have filled this form.</p>
 
-
+                <button type="submit" class="mx-auto button2"><a href="./index.php">Exit</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section><!-- End Form Section -->
 
@@ -327,43 +344,19 @@
   </footer><!-- End  Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></a>
+
+
+
   <?php
 
   require_once("./../includes/scripts.php");
   ?>
 
-  <!-- fading evaluation submit-->
-  <?php
-
-  if (isset($_SESSION["studentFilledCount"])) {
-
-  ?>
+  <?php if (isset($_SESSION["studentFilledCount"])) { ?>
     <script>
-      // $('#evaluationModal').modal('show');
-      // let myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
-      // myModal.show();
-      $("#evaluationModal").modal()
-      console.log("count");
+      $("#evaluationModal").modal('show')
     </script>
   <?php  } ?>
-
-  <div class="modal fade" id="evaluationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header border-bottom-0">
-          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button> -->
-        </div>
-        <div class="modal-body text-center">
-          <p>Thankyou for your response.</p>
-          <p>You're the fifth to fill this form.</p>
-
-          <button type="submit" class="mx-auto button2"><a href="./index.php">Exit</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
 
 </body>
 

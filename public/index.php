@@ -6,6 +6,7 @@
     require_once("../includes/headerContent.php");
     require_once("../includes/sessionStuffs.php");
 
+    unset($_SESSION["studentFilledCount"]);
 
     ?>
 
