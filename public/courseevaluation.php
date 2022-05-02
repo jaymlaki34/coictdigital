@@ -13,7 +13,7 @@
     echo "all good";
   } else {
     header("Location:/coictdigital/evaluation.php");
-    header("Location: ./evaluation1.php");
+    // header("Location: ./evaluation1.php");
   }
 
 

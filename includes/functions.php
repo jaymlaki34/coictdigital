@@ -1,8 +1,140 @@
 <?php
+require_once("functionHelpers.php");
 
 function getLastName($fullName)
 {
     return explode(",", $fullName)[0];
+}
+
+function formatEvaluationQnResults($resultQuery)
+{
+    $resultB = [
+        "1" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "2" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "3" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "4" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "5" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "6" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "7" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "8" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "9" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "10" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "11" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "12" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "13" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "14" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "15" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "16" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "17" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "18" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "19" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+
+
+
+    ];
+    // $qnNo = 1;
+    while ($data = mysqli_fetch_assoc($resultQuery)) {
+        // $resultB = updateResultFormatWithRow($resultB, $data, $qnNo);
+        // echo "<br>";
+        // echo "qn no is:" . $qnNo;
+        // echo "<br>";
+        // print_r($data);
+        // echo "<br>";
+
+
+        foreach ($data as $key => $val) {
+            switch ($key) {
+                case 1:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 2:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 3:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 4:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 5:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 6:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 7:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 8:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 9:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 10:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 11:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 12:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 13:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 14:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 15:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 16:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 17:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 18:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+                case 19:
+                    $resultB = updateValueForQn($resultB, $key, $val);
+                    break;
+
+                    // default:
+                    //     echo "failed to read question answer value";
+            }
+        }
+
+
+        // // switch ($data[$qnNo]) {
+        // //     case 1:
+        // //         $resultB[$qnNo]["excellent"] += 1;
+        // //         break;
+        // //     case 2:
+        // //         $resultB[$qnNo]["veryGood"] += 1;
+        // //         break;
+
+        // //     case 3:
+        // //         $resultB[$qnNo]["satisfactory"] += 1;
+        // //         break;
+        // //     case 4:
+        // //         $resultB[$qnNo]["poor"] += 1;
+        // //         break;
+        // //     case 5:
+        // //         $resultB[$qnNo]["veryPoor"] += 1;
+        // //         break;
+
+        // //     default:
+        // //         echo "failed to read question answer value";
+        // // }
+        // $qnNo += 1;
+        // // if ($qnNo == 19) { //skip for data which is explanation for sexual harassment
+        // //     break;
+        // // }
+    }
+    return $resultB;
 }
 
 function showErrorInQueryToDb($conn)
@@ -48,7 +180,12 @@ function submitEvaluationQnAns($qnAns)
 
     confirm_query($conn, $results);
 
-    //fetch how many has filled;
+    return countEvaluationResponse($course);
+}
+
+function countEvaluationResponse($course)
+{
+    global $conn;
     $sql2 = "SELECT * FROM evaluation_questions  WHERE `course_code`='$course'";
 
     if ($result = mysqli_query($conn, $sql2)) {
@@ -56,6 +193,18 @@ function submitEvaluationQnAns($qnAns)
         $rowcount = mysqli_num_rows($result);
         return $rowcount;
     }
+}
+
+function fetchCourseEvaluationResults($course)
+{
+    global $conn;
+    //write query
+    $sql = "SELECT * FROM `evaluation_questions` WHERE `course_code`='$course' ";
+
+    $results = mysqli_query($conn, $sql);
+    // $results =  mysqli_fetch_assoc($results);
+
+    return $results;
 }
 
 

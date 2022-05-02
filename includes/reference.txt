@@ -3,3 +3,6 @@ evaluationFilled  -> check if evaluation.php is filled before going to courseeva
 
 evaluationQn -> evaluation qns key and thier answers
 studentFilledCount //no of students that has filled the evaluation form
+
+evaluationResultsA   for the parts of evaluationresults.php file
+evaluationResultsB

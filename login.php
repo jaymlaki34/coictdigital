@@ -34,106 +34,39 @@ if (isset($_POST["login"])) {
     }
 } elseif (isset($_POST["evaluationQn"])) {
     $allOkey = true;
-
-
     // $result = submitEvaluationQnAns($_POST);
     $result = 3;
-
 
     if ($allOkey) {
         $_SESSION["studentFilledCount"] = $result;
         header("Location: public/courseevaluation.php");
     }
-} elseif (isset($_POST["signup"])) {
-    print_r($_POST);
-    $signupName = $_POST["signupName"];
-    $signupAs = $_POST["SignupAs"];
-    $subject = $_POST["Subject"];
-    $signupPhone = $_POST["signupPhone"];
-    $signupEmail = $_POST["signupEmail"];
-    $signupPassword = $_POST["signupPassword"];
-    $signupPassword = password_hash($signupPassword, PASSWORD_DEFAULT);
+} elseif (isset($_POST["departmentForm"])) {
+    //ldksj
+    $studyYear = $_POST["year"];
+    $programme = $_POST["programme"];
+    $semester = $_POST["semester"];
+    $course = $_POST["course"];
+
+    $resultA = fetchProceedEvalutation($course, $programme, $studyYear);
+    $resultB = fetchCourseEvaluationResults($course);
+    $resultA = array_merge($resultA, ["totalResponse" => countEvaluationResponse($course)]);
+
+    $resultB = formatEvaluationQnResults($resultB);
 
 
-    $sql = " INSERT INTO registration (email, name, password, status,contact, subject1) VALUES ( '$signupEmail', '$signupName', '$signupPassword', '$signupAs','$signupPhone', '$subject'); ";
-    $rs = mysqli_query($conn, $sql);
-    confirm_query($conn, $rs);
+    echo "<br>";
+    echo "<br>";
+    print_r($resultB);
 
-    $_SESSION["email"] = $signupEmail;
-    header("Location: index.php?k={$signupEmail}");
-} elseif (isset($_POST["updateProfile"])) {
-    print_r($_POST);
-    //   $signupName=$_POST["signupName"];
-    //   $signupAs=$_POST["SignupAs"];
-    if (isset($_POST["Subject1"])) {
-        $subject1 = $_POST["Subject1"];
-    }
-    if (isset($_POST["Subject2"])) {
-        $subject2 = $_POST["Subject2"];
-    }
-    if (isset($_POST["Subject3"])) {
-        $subject3 = $_POST["Subject3"];
-    }
-    if (isset($_POST["bio"])) {
-        $bio = $_POST["bio"];
-    }
 
-    //   $signupPhone=$_POST["signupPhone"];
-    //   $signupEmail=$_POST["signupEmail"];
-    $signupPassword = $_POST["signupPassword"];
-    $signupPassword = password_hash($signupPassword, PASSWORD_DEFAULT);
-    $signupEmail = $_SESSION["email"];
-    $sql = " UPDATE registration SET subject1='$subject1', subject2='$subject2', subject3='$subject3',bio='$bio', password='$password' WHERE email='$signupEmail' ";
-    //  $sql=" INSERT INTO registration (email, name, password, status, subject1) VALUES ( '$signupEmail', '$signupName', '$signupPassword', '$signupAs', '$subject'); ";
-    $rs = mysqli_query($conn, $sql);
-    confirm_query($conn, $rs);
+    $allOkey = true;
 
-    // $_SESSION["email"]= $signupEmail;
-    header("Location: teacher-single.php?k={$signupEmail}");
-} elseif (isset($_POST["changePicture"])) {
-    $signupEmail = $_SESSION["email"];
+    if ($allOkey) {
+        $_SESSION["evaluationResultsA"] = $resultA;
+        $_SESSION["evaluationResultsB"] = $resultB;
 
-    $file = $_FILES;
-    //print_r($file["file"]);
-    $file = $file["file"];
-
-    $fileName = $file["name"];
-    $fileType = $file["type"];
-    $fileTempName = $file["tmp_name"];
-    $fileError = $file["error"];
-    $fileSize = $file["size"];
-
-    $fileExt = explode(".", $fileName);
-    $fileActualExt = strtolower(end($fileExt));
-    $allowed = ["jpg", "jpeg", "png"];
-    if (in_array($fileActualExt, $allowed)) {
-        if ($fileError === 0) {
-            if ($fileSize < 10000000) {
-                $imageFullName = $fileName . "." . uniqid("", true) . "." . $fileActualExt;
-                $fileDestination = "images/profilePictures/" . $imageFullName;
-
-                move_uploaded_file($fileTempName, $fileDestination);
-
-                $sql = " UPDATE registration SET profilePicture='$fileDestination' WHERE email='$signupEmail' ";
-                //  $sql=" INSERT INTO registration (email, name, password, status, subject1) VALUES ( '$signupEmail', '$signupName', '$signupPassword', '$signupAs', '$subject'); ";
-                $rs = mysqli_query($conn, $sql);
-                confirm_query($conn, $rs);
-                header("Location: teacher-single.php?k=$signupEmail");
-                //code
-            } else {
-                //"file is too big";
-                $_SESSION["error"] = "Picture too large, choose another";
-                header("Location: teacher-single.php?k=$signupEmail");
-            }
-        } else {
-            //echo "You had an error";
-            $_SESSION["error"] = "Please choose another picture";
-            header("Location: teacher-single.php?k=$signupEmail");
-        }
-    } else {
-        //echo "file uploaded is not correct";
-        $_SESSION["error"] = "Please choose another picture2";
-        header("Location: teacher-single.php?k=$signupEmail");
+        header("Location: public/evaluationresults.php");
     }
 }
 
