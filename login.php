@@ -15,13 +15,34 @@ if (isset($_POST["login"])) {
     if ($email) { // user verfied
         $_SESSION["userData"] = $email;
         unset($_SESSION['message']);
-        echo "you are logged in";
-        echo $email;
         header("Location: public/index.php");
     } else {
         $_SESSION["message"] = "not logged in";
         $_SESSION["failedToSignin"] = "yes";
         header("Location: index.php");
+    }
+} elseif (isset($_POST["proceedEvalutation"])) {
+    $allOkey = true;
+    $course = $_POST["course"];
+    $programme = $_POST["programme"];
+    $year = $_POST["year"];
+    $result = fetchProceedEvalutation($course, $programme, $year);
+
+    if ($allOkey) {
+        $_SESSION["evaluationFilled"] = $result;
+        header("Location: public/courseevaluation.php");
+    }
+} elseif (isset($_POST["evaluationQn"])) {
+    $allOkey = true;
+
+
+    // $result = submitEvaluationQnAns($_POST);
+    $result = 3;
+
+
+    if ($allOkey) {
+        $_SESSION["studentFilledCount"] = $result;
+        header("Location: public/courseevaluation.php");
     }
 } elseif (isset($_POST["signup"])) {
     print_r($_POST);
@@ -36,7 +57,7 @@ if (isset($_POST["login"])) {
 
     $sql = " INSERT INTO registration (email, name, password, status,contact, subject1) VALUES ( '$signupEmail', '$signupName', '$signupPassword', '$signupAs','$signupPhone', '$subject'); ";
     $rs = mysqli_query($conn, $sql);
-    confirm_query($rs);
+    confirm_query($conn, $rs);
 
     $_SESSION["email"] = $signupEmail;
     header("Location: index.php?k={$signupEmail}");
@@ -65,7 +86,7 @@ if (isset($_POST["login"])) {
     $sql = " UPDATE registration SET subject1='$subject1', subject2='$subject2', subject3='$subject3',bio='$bio', password='$password' WHERE email='$signupEmail' ";
     //  $sql=" INSERT INTO registration (email, name, password, status, subject1) VALUES ( '$signupEmail', '$signupName', '$signupPassword', '$signupAs', '$subject'); ";
     $rs = mysqli_query($conn, $sql);
-    confirm_query($rs);
+    confirm_query($conn, $rs);
 
     // $_SESSION["email"]= $signupEmail;
     header("Location: teacher-single.php?k={$signupEmail}");
@@ -96,7 +117,7 @@ if (isset($_POST["login"])) {
                 $sql = " UPDATE registration SET profilePicture='$fileDestination' WHERE email='$signupEmail' ";
                 //  $sql=" INSERT INTO registration (email, name, password, status, subject1) VALUES ( '$signupEmail', '$signupName', '$signupPassword', '$signupAs', '$subject'); ";
                 $rs = mysqli_query($conn, $sql);
-                confirm_query($rs);
+                confirm_query($conn, $rs);
                 header("Location: teacher-single.php?k=$signupEmail");
                 //code
             } else {
