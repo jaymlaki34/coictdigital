@@ -134,7 +134,7 @@
                     </tr>
                     <tr>
                       <td>Instructor's mode of delivery of the subject matter(techniques and styles)</td>
-                      <td><input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault1"></td>
+                      <td><input class="form-check-input" type="radio" name="flexRadioDefault3" value="1" id="flexRadioDefault1"></td>
                       <td><input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault1"></td>
                       <td><input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault1"></td>
                       <td><input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault1"></td>

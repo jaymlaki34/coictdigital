@@ -9,7 +9,7 @@ function getLastName($fullName)
 function formatEvaluationQnResults($resultQuery)
 {
     $resultB = [
-        "1" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
+        "1" => ["question" => "Instructor's preparedness on the subject matter", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
         "2" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
         "3" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
         "4" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
@@ -29,18 +29,9 @@ function formatEvaluationQnResults($resultQuery)
         "18" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
         "19" => ["question" => "Qn", "excellent" => 0, "veryGood" => 0, "satisfactory" => 0, "poor" => 0, "veryPoor" => 0],
 
-
-
     ];
-    // $qnNo = 1;
-    while ($data = mysqli_fetch_assoc($resultQuery)) {
-        // $resultB = updateResultFormatWithRow($resultB, $data, $qnNo);
-        // echo "<br>";
-        // echo "qn no is:" . $qnNo;
-        // echo "<br>";
-        // print_r($data);
-        // echo "<br>";
 
+    while ($data = mysqli_fetch_assoc($resultQuery)) {
 
         foreach ($data as $key => $val) {
             switch ($key) {
@@ -106,33 +97,6 @@ function formatEvaluationQnResults($resultQuery)
                     //     echo "failed to read question answer value";
             }
         }
-
-
-        // // switch ($data[$qnNo]) {
-        // //     case 1:
-        // //         $resultB[$qnNo]["excellent"] += 1;
-        // //         break;
-        // //     case 2:
-        // //         $resultB[$qnNo]["veryGood"] += 1;
-        // //         break;
-
-        // //     case 3:
-        // //         $resultB[$qnNo]["satisfactory"] += 1;
-        // //         break;
-        // //     case 4:
-        // //         $resultB[$qnNo]["poor"] += 1;
-        // //         break;
-        // //     case 5:
-        // //         $resultB[$qnNo]["veryPoor"] += 1;
-        // //         break;
-
-        // //     default:
-        // //         echo "failed to read question answer value";
-        // // }
-        // $qnNo += 1;
-        // // if ($qnNo == 19) { //skip for data which is explanation for sexual harassment
-        // //     break;
-        // // }
     }
     return $resultB;
 }
