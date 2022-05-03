@@ -34,8 +34,8 @@ if (isset($_POST["login"])) {
     }
 } elseif (isset($_POST["evaluationQn"])) {
     $allOkey = true;
-    // $result = submitEvaluationQnAns($_POST);
-    $result = 3;
+    $result = submitEvaluationQnAns($_POST);
+
 
     if ($allOkey) {
         $_SESSION["studentFilledCount"] = $result;
@@ -55,9 +55,7 @@ if (isset($_POST["login"])) {
     $resultB = formatEvaluationQnResults($resultB);
 
 
-    echo "<br>";
-    echo "<br>";
-    print_r($resultB);
+
 
 
     $allOkey = true;
@@ -65,6 +63,7 @@ if (isset($_POST["login"])) {
     if ($allOkey) {
         $_SESSION["evaluationResultsA"] = $resultA;
         $_SESSION["evaluationResultsB"] = $resultB;
+
 
         header("Location: public/evaluationresults.php");
     }

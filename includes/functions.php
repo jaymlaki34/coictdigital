@@ -113,7 +113,6 @@ function submitEvaluationQnAns($qnAns)
 
     $reg_no = $_SESSION["userData"]["reg_no"];
     $course = $_SESSION["evaluationFilled"]["course_code"];
-    print_r($qnAns);
 
     $_1 = $qnAns["flexRadioDefault1"];
     $_2 = $qnAns["flexRadioDefault2"];
@@ -136,8 +135,8 @@ function submitEvaluationQnAns($qnAns)
     $_19 = $qnAns["flexRadioDefault19"];
     $_20 = $qnAns["harrassmentExplanation"];
 
-    $sql = "INSERT INTO `evaluation_questions` (`reg_no`, `course_code`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`,`harrassment_explanation`) 
-    VALUES ('$reg_no', '$course', $_1, $_2, $_3, $_4, $_5,$_6,$_7,$_8,$_9,$_10,$_11,$_12,$_13,$_14,$_15,$_16,$_17,$_18,$_19,$_20)";
+    $sql = "INSERT INTO `evaluation_questions` (`reg_no`, `course_code`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`,`harassment_explanation`) 
+    VALUES ('$reg_no', '$course', $_1, $_2, $_3, $_4, $_5,$_6,$_7,$_8,$_9,$_10,$_11,$_12,$_13,$_14,$_15,$_16,$_17,$_18,$_19,'$_20')";
 
     $results = mysqli_query($conn, $sql);
 
