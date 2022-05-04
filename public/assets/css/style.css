@@ -18,10 +18,21 @@ h1, h2, h3, h4, h6 {
   font-family: "Helvetica", sans-serif;
 }
 
+<<<<<<< HEAD
 
 /* evaluation form FOR STUDENTS start*/
 .badge{
 margin-top: 30px;
+=======
+p{
+  font-size: 14px;
+}
+
+
+/* evaluation form FOR STUDENTS start*/
+.badge{
+margin-top: 10px;
+>>>>>>> b70736491ac673ef2010c9dc862b0a48f46d52db
 margin-right:10px;
 }
 
@@ -41,7 +52,13 @@ h5{
   font-weight: bold;
 }
 
+<<<<<<< HEAD
 
+=======
+td{
+  font-size: 14px;
+}
+>>>>>>> b70736491ac673ef2010c9dc862b0a48f46d52db
 
 textarea{
   margin-top: 10px;
