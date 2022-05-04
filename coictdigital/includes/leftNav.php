@@ -8,7 +8,7 @@
 
     <nav id="navbar" class="nav-menu navbar">
       <ul>
-        <li><a href="index.html" class="nav-link scrollto"> <span>Home</span></a></li>
+        <li><a href="index.php" class="nav-link scrollto"> <span>Home</span></a></li>
         <li><a href="<?php
                       if ($_SESSION["userData"]["role"] == 2) {
                         echo "department1.php";
@@ -17,7 +17,7 @@
                       }
                       ?>" class="nav-link scrollto"> <span>Course Evaluation</span></a></li>
         <li><a href="" class="nav-link scrollto"><span>Alumni Records</span></a></li>
-        <li><a href="" class="nav-link scrollto"> <span>Teaching Monitoring</span></a></li>
+        <li><a href="teachingmonitoring.php" class="nav-link scrollto"> <span>Teaching Monitoring</span></a></li>
         <li><a href="" class="nav-link scrollto"> <span>Course Allocation</span></a></li>
         <li><a href="" class="nav-link scrollto"> <span>Exam Invigilation</span></a></li>
       </ul>

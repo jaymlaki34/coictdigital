@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "mushi";
-$password = "localpassword";
+$username = "root";
+$password = "";
 $dbname = "coict_digital";
 
 //real for deployment in heroku

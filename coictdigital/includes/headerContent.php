@@ -5,7 +5,7 @@
 
 <title>CoICT Digital</title>
 <link rel="shortcut icon" href="assets/img/favicon.jpg" type="image/x-icon">
-<meta name="title" content="Digital solutions services">
+<meta name="title" content="">
 <meta name="description" content="">
 <meta name="keywords" content="">
 <!-- css files -->
