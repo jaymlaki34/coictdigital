@@ -37,6 +37,10 @@ h3{
   position: relative;
   padding-top: 30px;
 }
+h2{
+  font-size: 20px;
+  text-align: center;
+}
 h4{
   font-size: 18px;
   padding-top: 20px;
