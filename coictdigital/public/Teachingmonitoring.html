@@ -15,6 +15,18 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script>
+
+    function text(x){
+      if (x == 0){
+        document.getElementById("mycode").style.display = "block";
+      }else{
+        document.getElementById("mycode").style.display = "none";  
+      }
+      return;
+    }
+  </script>
+
 </head>
 
 <body>
@@ -70,7 +82,7 @@
             <!-- ======= General info ======= -->
   <h3>General Information</h3>
 
-            <h5>Please fill in the right information</h5>
+            <h5>Please fill in the scheduled session time</h5>
 
             
           </div>
@@ -96,9 +108,10 @@
          <h3>Instructor's Attendance</h3>
 
          <h5>Please select the corresponding attendance state of the instructor </h5>
-        
-        
-            <div class="form-check form-check-inline">
+         <input type="radio" name="rad1" onclick="text(0)" checked>Present
+
+         <input type="radio" name="rad1" onclick="text(1)">Absent
+            <!-- <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
               <label class="form-check-label" for="inlineRadio1">Present</label>
             </div>
@@ -106,8 +119,8 @@
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
               <label class="form-check-label" for="inlineRadio2">Absent</label>
-             </div>
-            
+             </div> -->
+            <div class="form-group" id="abs">
             <select class="form-select" aria-label="Default select example">
             <option selected="Select reason for starting late">If absent, select the reason for absence</option>
             <option value="1">Sickness</option>
@@ -118,7 +131,8 @@
             </select> 
           
              <h5>Are the students informed about the instructor's absence?</h5>
-        
+
+
              <div class="form-check form-check-inline">
                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -127,10 +141,13 @@
              <div class="form-check form-check-inline">
                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
                <label class="form-check-label" for="inlineRadio2">No</label>
+               
               </div>
+            </div>
 
             
 <!-- ======= session starting time ======= -->
+<div class="form-group" id="mycode">
 <h3>Time management</h3>
             <h4>Session Starting time</h4>
             <h5>Select the session starting time</h5>
@@ -393,12 +410,12 @@
             <div class="modal-body text-center">
               <p>Thankyou for your response</p>
               
-              <button type="submit" class="mx-auto button2" ><a href="monitoringresults.html">View Results</a></button>                             
+              <button type="submit" class="mx-auto button2" ><a href="index.html">Exit</a></button>                             
             </div>
           </div>
            </div>
       </div>
-
+    </div>
           
           </form>
         </div>
