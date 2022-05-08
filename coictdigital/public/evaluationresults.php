@@ -34,12 +34,6 @@
 
     <!-- ======= Form Section ======= -->
 
-    <div class="row">
-      <div class="col-md-12">
-        <span class="badge alert-success" style="float: right; width: 100px;">HOD</span>
-      </div>
-    </div>
-
     <section id="evaluation" class="services">
       <div class="container-fluid">
         <div class="section-title">
@@ -112,7 +106,7 @@
               <div class="centre">
                 <p> <?php echo $key . ". " . $val["question"]; ?> </p>
                 <div class="chart">
-                  <canvas id="<?php echo "chart-bars" . $key;  ?>" class="chart-canvas" height="250" style="border-radius: 10px;"></canvas>
+                  <canvas id="<?php echo "chart-bars" . $key;  ?>" class="chart-canvas" height="250" width="200" style="border-radius: 10px;"></canvas>
                 </div>
               </div>
             </div>
@@ -124,7 +118,7 @@
 
 
           <div class="form-group">
-            <button type="submit" class="mx-auto button3" name="submit">Download Results</button>
+            <button type="submit" class="mx-auto button2" name="submit">Print</button>
           </div>
         </div>
     </section><!-- End Form Section -->

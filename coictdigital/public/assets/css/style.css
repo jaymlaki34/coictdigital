@@ -49,6 +49,10 @@ p{
     color: white;
     }
 
+    .chart{
+      width: 400px;
+    }
+
 /* evaluation form end*/
 
 /* login form start*/

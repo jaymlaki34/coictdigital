@@ -16,10 +16,10 @@
                         echo "evaluation1.php";
                       }
                       ?>" class="nav-link scrollto"> <span>Course Evaluation</span></a></li>
-        <li><a href="" class="nav-link scrollto"><span>Alumni Records</span></a></li>
-        <li><a href="teachingmonitoring.php" class="nav-link scrollto"> <span>Teaching Monitoring</span></a></li>
-        <li><a href="" class="nav-link scrollto"> <span>Course Allocation</span></a></li>
-        <li><a href="" class="nav-link scrollto"> <span>Exam Invigilation</span></a></li>
+        <li><a href="alumnirecords.php" class="nav-link scrollto"><span>Alumni Records</span></a></li>
+        <li><a href="teaching.php" class="nav-link scrollto"> <span>Teaching Monitoring</span></a></li>
+        <li><a href="courseallocation.php" class="nav-link scrollto"> <span>Course Allocation</span></a></li>
+        <li><a href="examinvigilation.php" class="nav-link scrollto"> <span>Exam Invigilation</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
   </div>
