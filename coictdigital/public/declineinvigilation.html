@@ -59,18 +59,14 @@
           <div class="container">
           <form>
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Search</label>
+              <label class="col-sm-2 col-form-label"> <i class="fa fa-search" aria-hidden="true"></i>Search</label>
               <div class="col-sm-5 mb-1">
                 <input type="text" class="form-control">
               </div>
-              <div class="col-sm-5 mb-1">
-              <a href="#addnewModal"  data-toggle="modal" data-target="#addnewModal" > 
-                <button type="submit" class="mx-auto button" style="float: right; height: 40px;">Add New</button>
-              </a>
-              </div>
+              
             </div>
            <div class="form-group row">
-              <h5>Table of exam invigilation for staff</h5>
+              <h5>You have been just Accept  your allocation</h5>
             </div>
             <div class="form-group row">
               <div class="centre">
@@ -78,62 +74,70 @@
                 <thead class="table-secondary">
                   <tr>
                     <th scope="col">Staff Name</th>
-                    <th scope="col">Course Name>
+                    <th scope="col">Assistant Name</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Course_to_invigilate</th>
                     <th scope="col">Venue</th>
                     <th scope="col">Time</th>
-                    <th scope="col">Action</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
                  
                   <tr>
                     <td>Frank Zizima</td>
+                    <td>Frank doe</td>
                     <td>Information Systems</td>
+                    <td>CS ,BIT</td>
                     <td>B302</td>
                     <td>8:00am-11:00am</td>
-                    <td><a href="#editModal"  class="fa fa-pencil" data-toggle="modal" data-target="#editModal"></a>  <a href="#"  class="fa fa-trash"></a> <a href="#"  class="fa fa-history"></a></td>
                   </tr>
                   <tr>
                     <td>Frank Zizima</td>
+                    <td>mwamba doe</td>
                     <td>Information Systems</td>
+                    <td>CS ,BIT</td>
                     <td>B302</td>
                     <td>8:00am-11:00am</td>
-                    <td><a href="#editModal"  class="fa fa-pencil" data-toggle="modal" data-target="#editModal"></a>  <a href="#"  class="fa fa-trash"></a> <a href="#"  class="fa fa-history"></a></td>
                   </tr>
                   <tr>
                     <td>Frank Zizima</td>
+                    <td>Frank doe</td>
                     <td>Information Systems</td>
+                    <td>CS ,BIT</td>
                     <td>B302</td>
                     <td>8:00am-11:00am</td>
-                    <td><a href="#editModal"  class="fa fa-pencil" data-toggle="modal" data-target="#editModal"></a>  <a href="#"  class="fa fa-trash"></a> <a href="#"  class="fa fa-history"></a></td>
                   </tr>
                   <tr>
                     <td>Frank Zizima</td>
+                    <td>Frank doe</td>
                     <td>Information Systems</td>
+                    <td>CS ,BIT</td>
                     <td>B302</td>
                     <td>8:00am-11:00am</td>
-                    <td><a href="#editModal"  class="fa fa-pencil" data-toggle="modal" data-target="#editModal"></a>  <a href="#"  class="fa fa-trash"></a> <a href="#"  class="fa fa-history"></a></td>
                   </tr>
                   <tr>
                     <td>Frank Zizima</td>
+                    <td>Jay mwahe</td>
                     <td>Information Systems</td>
+                    <td>CS ,BIT</td>
                     <td>B302</td>
                     <td>8:00am-11:00am</td>
-                    <td><a href="#editModal"  class="fa fa-pencil" data-toggle="modal" data-target="#editModal"></a>  <a href="#"  class="fa fa-trash"></a> <a href="#"  class="fa fa-history"></a></td>
                   </tr>
                   <tr>
                     <td>Frank Zizima</td>
+                    <td>Jay doe</td>
                     <td>Information Systems</td>
+                    <td>CS ,BIT</td>
                     <td>B302</td>
                     <td>8:00am-11:00am</td>
-                    <td><a href="#editModal"  class="fa fa-pencil" data-toggle="modal" data-target="#editModal"></a>  <a href="#"  class="fa fa-trash"></a> <a href="#"  class="fa fa-history"></a></td>
                   </tr>
                   
                 </tbody>
               </table>
             </div>
             </div>
-          
+           
           </form>
         </div>
 
@@ -180,7 +184,7 @@
       <!-- end of fading aadnew form-->
       
       <!-- fading edit form-->
-      <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="declineModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header border-bottom-0">
@@ -190,7 +194,7 @@
             </div>
             <div class="modal-body">
               <div class="form-title text-center">
-                <h4>Edit Invigilation</h4>
+                <h4>Reasons For Decline</h4>
               </div>
               <div class="d-flex flex-column text-center">
                 <form>
@@ -198,15 +202,14 @@
                     <input type="text" class="form-control" id="staffname"placeholder="Staff Name">
                   </div>
                   <div class="form-group">
+                    <input type="text" class="form-control" id="assistantname"placeholder="Assistant Name">
+                  </div>
+                  <div class="form-group">
                     <input type="text" class="form-control" id="coursename" placeholder="Course Name">
                   </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="venue" placeholder="Venue">
+                 
                   </div>
-                  <div class="form-group">
-                    <input type="time" class="form-control" id="time" placeholder="Time">
-                  </div>
-                  <button type="submit" class="mx-auto button" >Save</button>
+                  <button type="submit" class="mx-auto button" >SEND</button>
                 </form>
               </div>
             </div>
