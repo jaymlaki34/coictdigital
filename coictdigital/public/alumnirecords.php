@@ -71,19 +71,19 @@
 
             </div>
            <div class="form-group row">
-              <h5>alumni table</h5>
+              <h5>ALUMNI TABLE</h5>
             </div>
             <div class="form-group row">
               <div class="centre">
               <table class="table table-sm">
                 <thead class="table-secondary">
                   <tr>
-                    <th scope="col">reg. no</th>
-                    <th scope="col">alumni name</th>
-                    <th scope="col">program</th>
-                    <th scope="col">year</th>
-                    <th scope="col">adresses</th>
-                    <th scope="col">action</th>
+                    <th scope="col">ALUMNI NAME</th>
+                    <th scope="col">PROGRAM</th>
+                    <th scope="col">YEAR COMPLETED</th>
+                    <th scope="col">EMAIL ADRESS</th>
+                    <th scope="col">CONTACT</th>
+                    <th scope="col">EMPLOYER</th>
                   </tr>
                 </thead>
                 <tbody>
